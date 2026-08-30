@@ -39,6 +39,7 @@ include ('maxkey-starter:maxkey-starter-social')
 include ('maxkey-starter:maxkey-starter-web')
 include ('maxkey-starter:maxkey-starter-web-static')
 include ('maxkey-starter:maxkey-starter-passkey')
+include ('maxkey-starter:maxkey-starter-properties')
 
 //authentications
 include ('maxkey-authentications:maxkey-authentication-core')

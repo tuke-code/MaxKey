@@ -43,6 +43,7 @@ dependencies {
    	implementation project(":maxkey-starter:maxkey-starter-ip2location")
 	implementation project(":maxkey-starter:maxkey-starter-otp")
 	implementation project(":maxkey-starter:maxkey-starter-passkey")
+	implementation project(":maxkey-starter:maxkey-starter-properties")
 	implementation project(":maxkey-starter:maxkey-starter-sms")
 	implementation project(":maxkey-starter:maxkey-starter-social")
 	implementation project(":maxkey-starter:maxkey-starter-web")
