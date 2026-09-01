@@ -44,6 +44,9 @@ public class LoginConfig {
     @Value("${maxkey.login.jwt:false}")
     boolean jwt;
     
+    @Value("${maxkey.login.registration:false}")
+    boolean registration;
+    
     @Value("${maxkey.login.cas.serverUrlPrefix:http://sso.maxkey.top/sign/authz/cas}")
     String casServerUrlPrefix;
     
@@ -130,19 +133,39 @@ public class LoginConfig {
 		this.jwt = jwt;
 	}
 
+	public boolean isRegistration() {
+		return registration;
+	}
+
+	public void setRegistration(boolean registration) {
+		this.registration = registration;
+	}
+
 	@Override
-    public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append("LoginConfig [mfa=");
-        builder.append(mfa);
-        builder.append(", kerberos=");
-        builder.append(kerberos);
-        builder.append(", remeberMe=");
-        builder.append(remeberMe);
-        builder.append(", wsFederation=");
-        builder.append(wsFederation);
-        builder.append("]");
-        return builder.toString();
-    }
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("LoginConfig [captcha=");
+		builder.append(captcha);
+		builder.append(", captchaType=");
+		builder.append(captchaType);
+		builder.append(", mfa=");
+		builder.append(mfa);
+		builder.append(", kerberos=");
+		builder.append(kerberos);
+		builder.append(", remeberMe=");
+		builder.append(remeberMe);
+		builder.append(", wsFederation=");
+		builder.append(wsFederation);
+		builder.append(", jwt=");
+		builder.append(jwt);
+		builder.append(", registration=");
+		builder.append(registration);
+		builder.append(", casServerUrlPrefix=");
+		builder.append(casServerUrlPrefix);
+		builder.append(", casService=");
+		builder.append(casService);
+		builder.append("]");
+		return builder.toString();
+	}
 
 }

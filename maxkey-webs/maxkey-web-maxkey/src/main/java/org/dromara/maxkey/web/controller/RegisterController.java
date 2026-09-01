@@ -86,7 +86,10 @@ public class RegisterController {
     //直接注册
      @PostMapping(value={"/register"})
     public Message<?> register(@ModelAttribute UserInfo userInfo , @RequestParam String captcha) throws ServletException, IOException {
-         UserInfo validateUserInfo = new UserInfo();
+         if(!applicationConfig.getLoginConfig().isRegistration()) {
+			 return new Message<UserInfo>(Message.FAIL,"Registration is not enabled");
+		 }
+    	 UserInfo validateUserInfo = new UserInfo();
          validateUserInfo.setUsername(userInfo.getMobile());
          validateUserInfo.setMobile(userInfo.getMobile());
          AbstractOtpAuthn smsOtpAuthn = smsOtpAuthnService.getByInstId(WebContext.getInst().getId());
